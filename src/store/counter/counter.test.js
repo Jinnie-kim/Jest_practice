@@ -39,4 +39,12 @@ describe('counterReducer', () => {
 
     expect(result).toBe(INITIAL_STATE);
   });
+
+  // 4. action type이 이상할 때 preveState를 리턴하는지 확인
+  it('should return prevState when action is weird', () => {
+    const PREV_STATE = 1;
+    const result = counterReducer(PREV_STATE, { type: 'asdfsafdsf' });
+
+    expect(result).toBe(PREV_STATE);
+  });
 });
