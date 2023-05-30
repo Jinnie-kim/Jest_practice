@@ -20,3 +20,14 @@ test('App should render title and increase button', () => {
   const button = screen.getByText(/increase/i); // 정규 표현식을 써주는 것이 좋다. 포함된 것을 찾는다.
   expect(button).toBeInTheDocument();
 });
+
+test('App should render title with count: 0', () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+
+  const title = screen.getByRole('heading');
+  expect(title.textContent).toBe('count:0');
+});
