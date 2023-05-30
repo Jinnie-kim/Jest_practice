@@ -31,3 +31,19 @@ test('App should render title with count: 0', () => {
   const title = screen.getByRole('heading');
   expect(title.textContent).toBe('count:0');
 });
+
+test('App should render title with count: 0 and increase count when increase button clicked', () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+
+  const title = screen.getByRole('heading');
+  expect(title.textContent).toBe('count:0');
+
+  const button = screen.getByText(/increase/i);
+  userEvent.click(button);
+
+  expect(title.textContent).toBe('count:1');
+});
