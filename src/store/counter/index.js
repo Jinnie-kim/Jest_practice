@@ -1,5 +1,5 @@
 // Action Type
-const INCREASE = "counter/increase";
+export const INCREASE = 'counter/increase';
 //
 // Action
 //
@@ -23,3 +23,6 @@ const counterReducer = (prevState = INITIAL_STATE, action) => {
 
 export { increaseCounter };
 export default counterReducer;
+
+// redux는 pure function, side effect X
+// input과 output이 어떤 경우에도 같다. -> test 용이
