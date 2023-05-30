@@ -30,4 +30,13 @@ describe('counterReducer', () => {
 
     expect(result).toBe(0);
   });
+
+  // 3. prevState가 주어지지 않을 때, initalState가 0인지 확인
+  it('should return INITIAL_STATE(0) when prevState is not provided', () => {
+    const result = counterReducer();
+
+    const INITIAL_STATE = 0;
+
+    expect(result).toBe(INITIAL_STATE);
+  });
 });
